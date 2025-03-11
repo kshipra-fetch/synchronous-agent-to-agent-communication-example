@@ -13,7 +13,7 @@ agent2_address = ""       #run agent2.py, copy the agent's address and paste her
 
 @agent.on_interval(period=30.0)
 async def send_message(ctx: Context):
-    msg = Message(message="hello from alice!")
+    msg = Message(message="hello from agent1!")
     reply, status = await ctx.send_and_receive(agent2_address, msg, response_type=Response)
     if isinstance(reply, Response):
         ctx.logger.info(f"Received awaited response from bob: {reply.response}")
